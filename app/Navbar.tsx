@@ -1,9 +1,11 @@
+"use client";
 import Link from "next/link";
 import React from "react";
-import { IconContext } from "react-icons";
+import { usePathname } from "next/navigation";
 import { FcLinux } from "react-icons/fc";
-
+import classNames from "classnames";
 const Navbar = () => {
+  const currentPath = usePathname();
   const links = [
     { href: "/dashboard", label: "Dashboard" },
     { href: "/issues", label: "Issues" },
@@ -17,7 +19,11 @@ const Navbar = () => {
         {links.map((link) => (
           <li key={link.label}>
             <Link
-              className="mx-3 text-zinc-600 hover:text-zinc-900 transition-colors "
+              className={classNames({
+                "mx-3  hover:text-zinc-900 transition-colors": true,
+                "text-zinc-900": link.href === currentPath,
+                "text-zinc-600": link.href !== currentPath,
+              })}
               href={link.href}
             >
               {link.label}
