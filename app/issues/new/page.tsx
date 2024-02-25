@@ -1,12 +1,14 @@
 "use client";
 import { Flex, TextArea, TextField, Button } from "@radix-ui/themes";
+import SimpleMDE from "react-simplemde-editor";
+import "easymde/dist/easymde.min.css";
 
 const NewIssuePage = () => {
   return (
     <div className="max-w-xl space-y-3 ">
       <Flex direction="column" gap="3">
         <TextField.Input placeholder="Title" />
-        <TextArea placeholder="description" />
+        <SimpleMDE placeholder="description" />
       </Flex>
       <Button>Submit New Issue</Button>
     </div>
