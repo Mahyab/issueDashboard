@@ -1,7 +1,7 @@
 import React from "react";
 
 function IssuesPage() {
-  return <div></div>;
+  return <div>Issues </div>;
 }
 
 export default IssuesPage;
